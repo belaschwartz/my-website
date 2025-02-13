@@ -38,6 +38,11 @@ body {
     overflow:auto;
     text-align:center;
     }
+
+  .sidebar-left ul {
+    list-style: none;
+    padding: 0;
+  }
     
   /*Use with <ul> to create a button section in the sidebar.*/
   .buttons {
