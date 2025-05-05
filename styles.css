@@ -166,17 +166,15 @@ a {
 
   .musicgrid {
     display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
+    gap: 5px;
   }
 
   .musicgrid > div {
+    border-radius: 5px;
+    padding: 8px;
+    background-color: beige;
     border: solid 1px black;
-      background-color: beige;
-      padding: 1em;
   }
 
-  .musicgrid > div > p {
-    margin: 0;
-      text-align: center;
-  }
+ 
+  
