@@ -14,8 +14,9 @@ a {
   border-radius: 5px;
   background: #fefefe;
   border: 1px solid #0d8500;
-  width: 500px;
   padding:15px;
+  height: 90vh;
+  overflow: scroll;
   margin: 20px 25px 25px 400px;
   }
   
