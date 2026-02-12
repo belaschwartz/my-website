@@ -19,6 +19,10 @@ a {
   overflow: scroll;
   margin: 20px 25px 25px 400px;
   }
+
+  #main-heading {
+    text-align: center;
+  }
   
 /*Prevent overflow of large images*/
 .main img, .sidebar-left img {
