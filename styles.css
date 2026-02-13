@@ -16,7 +16,7 @@ a {
   border: 1px solid #0d8500;
   padding:15px;
   height: 90vh;
-  overflow: scroll;
+  overflow-y: scroll;
   margin: 20px 25px 25px 400px;
   }
 
@@ -141,13 +141,13 @@ a {
     margin: 0 auto;
     margin-top: 1em;
     }
-    
+
   .sideimage {
     /*don't even bother*/
     display: none;
     }
   }
-
+    
   .moviegrid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -181,5 +181,28 @@ a {
     border: solid 1px black;
   }
 
+  .bordered {
+    border-width:10px;
+    border-style:solid;
+    border-image: url("https://hosting.photobucket.com/albums/bb183/phyncke_graphique/Pixel-Frames/.highres/a49U000028.gif?width=450&height=278&crop=fill") 9 fill round;
+  }
+
+  #rose-divider {
+    border-width:10px;
+    border-style:solid;
+    border-image: url("images/roses divider.gif");
+    width: 100%;
+  }
+table {
+    margin: 0 auto;
+}
  
-  
+  h1 {
+    font-family: cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 29px;
+  }
+
+  h2 {
+    font-family: cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+  }
