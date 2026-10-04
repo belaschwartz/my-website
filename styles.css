@@ -206,3 +206,158 @@ table {
     font-family: cursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 25px;
   }
+
+  /* ===== PHOTO GRI: photos page ===== */
+
+.photogrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.photo {
+  display: block;
+  aspect-ratio: 1 / 1;          /* makes every thumbnail a square */
+  overflow: hidden;
+  background-color: beige;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* crops to fill the square, no stretching */
+  display: block;
+}
+
+.photo:hover img,
+.photo:focus img {
+  opacity: 0.8;
+}
+
+/* Popup */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 18, 0, 0.88);   /* same dark green as your page background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  z-index: 100;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: 600px;
+  max-height: 95vh;
+  overflow-y: auto;
+  background: #fefefe;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+}
+
+.lightbox-box img {
+  max-width: 100%;
+  max-height: 65vh;
+  height: auto;
+}
+
+.lightbox-caption {
+  margin: 10px 0 2px;
+}
+
+.lightbox-date {
+  margin: 0;
+  font-size: 0.85em;
+  color: #0d8500;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #0d8500;
+  cursor: pointer;
+}
+
+/* Two columns on phones */
+@media (orientation: portrait) {
+  .photogrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== DIARY ====== */
+
+.diary {
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+}
+
+.entry {
+  padding: 0 0 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #0d8500;
+  line-height: 1.5;
+}
+
+.entry h2 {
+  margin: 0 0 4px 0;
+  color: #0d8500;
+}
+
+/* the little "mood / listening to" line under the date */
+.mood {
+  margin: 0 0 12px 0;
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ===== VIDEO GRID: music page ===== */
+
+.videogrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.video {
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* keeps the video in a widescreen shape at any size */
+  border: 0;
+  display: block;
+}
+
+.video p {
+  margin: 8px 0 0 0;
+  text-align: center;
+}
+
+/* One column on phones */
+@media (orientation: portrait) {
+  .videogrid {
+    grid-template-columns: 1fr;
+  }
+}
