@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kikiandthecats - photos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar-left">
+            <h1>Kiki and the Cats</h1>
+            <img src="images/hugging_angels.gif">
+            <nav>
+             <ul>
+                <li><a href="index.html"aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <!-- ===== <li><a href="diary.html">Diary</a></li> ===== -->
+            </ul>
+          </nav>
+          <a href="https://www.itinerae.org/2024/01/dividers.html" target="_blank" rel="noopener noreferrer">
+            <img src="images/green stars gif divider.webp">
+            </a>
+            <a href="https://grrrl.valentinely.cc/" target="_blank" rel="noopener noreferrer">
+                <img src="images/madebyagirl_badge.png" width="60">
+            </a>
+        </div>
+
+  <div class="main">
+    <h1 id="main-heading">Photo Diary</h1>
+    <p style="text-align:center;">Random collection of pictures. Tap a photo to see the caption.</p>
+
+    <div class="photogrid">
+
+      <!-- ===== ONE POST = ONE <a> BLOCK. Copy it, edit it, paste the newest at the top. ===== -->
+      <a href="images/photos/DSC05047.jpg" class="photo"
+         data-caption="my room in Rome <3 <3"
+         data-date="Summer 2026">
+        <img src="images/photos/DSC05047.jpg" alt="mirror picture of me">
+      </a>
+
+      <a href="images/photos/IMG_3262 Medium.jpeg" class="photo"
+         data-caption="Floor mosaic from a church in Rome"
+         data-date="Summer 2024">
+        <img src="images/photos/IMG_3262 Medium.jpeg" alt="floor mosaic">
+      </a>
+
+      <a href="images/photos/IMG_3976.jpeg" class="photo"
+         data-caption="Firenze"
+         data-date="Summer 2026">
+        <img src="images/photos/IMG_3976.jpeg" alt="very far away picture of me in front of the duomo in Florence, Italy">
+      </a>
+
+      <a href="images/photos/Mother Mary Statue.jpeg" class="photo"
+         data-caption="I love this picture I took with my little digicam"
+         data-date="Summer 2026">
+        <img src="images/photos/Mother Mary Statue.jpeg" alt="statue of the Virgin Mary amongst an ivy plant">
+      </a>
+
+      <a href="images/photos/IMG_8782.jpg" class="photo"
+         data-caption="ME! Picture from @groovypaper on Instagram. "
+         data-date="">
+        <img src="images/photos/IMG_8782.jpg" alt="vintage pin that says <<So what if I ain't efficient, I'm cute!>>">
+      </a>
+
+      <a href="images/photos/Books.jpg" class="photo"
+         data-caption="cute collection of books from a market in Rome "
+         data-date="Summer 2026">
+        <img src="images/photos/Books.jpg" alt="horizontal stack of books">
+      </a>
+
+      <a href="images/photos/Fountain.jpg" class="photo"
+         data-caption="My favorite fountain in ROME <3 also known as Il Fontanone."
+         data-date="">
+        <img src="images/photos/Fountain.jpg" alt="Il Fontanone, Baroque fountain">
+      </a>
+      <!-- ===== end of posts ===== -->
+
+    </div>
+  </div>
+
+  <!-- Popup that opens when you click a photo -->
+  <div id="lightbox" class="lightbox" hidden>
+    <div class="lightbox-box">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+      <p id="lightbox-date" class="lightbox-date"></p>
+    </div>
+  </div>
+
+  <script>
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    var cap = document.getElementById('lightbox-caption');
+    var date = document.getElementById('lightbox-date');
+
+    document.querySelectorAll('.photo').forEach(function (p) {
+      p.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = p.getAttribute('href');
+        img.alt = p.querySelector('img').alt;
+        cap.textContent = p.dataset.caption || '';
+        date.textContent = p.dataset.date || '';
+        box.hidden = false;
+      });
+    });
+
+    function closeBox() { box.hidden = true; img.src = ''; }
+    document.getElementById('lightbox-close').addEventListener('click', closeBox);
+    box.addEventListener('click', function (e) { if (e.target === box) closeBox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+  </script>
+
+</body>
+</html>
