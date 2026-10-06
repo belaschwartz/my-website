@@ -1,0 +1,61 @@
+body {
+    background-image: url("images/background\ stars_itinarae.webp");
+    background-color: rgb(182, 225, 246);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+p{
+    font-family:Georgia, 'Times New Roman', Times, serif;;
+    font-size: 20 px;
+}
+
+
+.content {
+    display: flex;
+}
+
+/*note that this was from chatgpt so i dont know what i am doing*/
+.center-container {
+    width: 760px;
+    margin: auto;
+    background-color: #003366;
+    border: 3px double #ffcc00;
+    padding: 20px;
+}    
+
+.side-images {
+    padding: 0px 50px;
+    margin: auto;
+}
+.side-images > img {
+    width: 200px;
+}
+
+.center {
+    text-align: center;
+}
+
+.images {
+    align-content: center;
+}
+
+/* unvisited link */
+a:link {
+  color: rgb(0, 204, 255);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(0, 204, 255);
+}
